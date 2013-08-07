@@ -5,7 +5,7 @@ import javax.swing.SwingUtilities;
 import org.apache.log4j.Logger;
 
 import com.creamtec.techtalk.game.api.MazeGenerator;
-import com.creamtec.techtalk.game.conf.ApplicationConfig;
+import com.creamtec.techtalk.game.conf.ImplementationConfig;
 
 /**
  * The game entry point.
@@ -24,7 +24,7 @@ public class Main {
             public void run() {
                 MazeGenerator generator = null;
                 try {
-                    generator = ApplicationConfig.getMazeGenerator();
+                    generator = ImplementationConfig.getMazeGenerator();
                 } catch (Exception e) {
                     LOGGER.error(e);
                 }
