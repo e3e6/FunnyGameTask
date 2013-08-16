@@ -1,6 +1,5 @@
 package com.creamtec.techtalk.game.api;
 
-import java.awt.Point;
 import java.util.List;
 
 /**
@@ -32,47 +31,20 @@ public interface GameProcessor {
             MonsterProcessor monsterProcessor, FeedProcessor feedProcessor);
 
     /**
-     * Performs action of moving the gamer in the specified direction.
+     * Performs action of moving the player in the specified direction.
      * <p>
      * This method should be called by keyboard listeners of the game frame.
      *
      * @param action
      *            {@link MoveAction} to specify move direction
      */
-    void moveGamer(MoveAction action);
+    void movePlayer(MoveAction action);
 
     /**
-     * Returns current position of the gamer inside the maze.
-     * <p>
-     * Position is the location of the gamer inside maze, so X and Y are the coordinates of the
-     * cell, where the gamer is currently located, and not the pixel coordinates.
-     * <p>
-     * Position should be specified and can't be <code>null</code>.
+     * Returns instance of {@link Player} with current info about the player object.
      *
-     * @return position of the gamer inside the maze.
+     * @return {@link Player} with actual info about the player object
      */
-    Point getGamerPosition();
-
-    /**
-     * Return a special icon for the gamer.
-     * <p>
-     * Icon should be specified and can't be <code>null</code>.
-     * <p>
-     * Gamer icon should be drawn centered.
-     * <p>
-     * Note: prepare a gamer icon, based on the recommended {@link Cell} size.
-     *
-     * @return special icon for the gamer
-     */
-    Icon getGamerIcon();
-
-    /**
-     * Returns the current game score of the gamer.
-     * <p>
-     * Gamer score should be drawn on the game frame.
-     *
-     * @return number representation of the current gamer score
-     */
-    long getScore();
+    Player getPlayer();
 
 }
