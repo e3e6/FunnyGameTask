@@ -70,7 +70,7 @@ public class Main {
             	int hCellCount = screenDimension.width/cellSize;
         		int wCellCount = screenDimension.height/cellSize;       		
         		
-        		List<Cell> mazeDescription = generator.generateMaze(hCellCount, wCellCount);
+        		List<Cell> mazeDescription = generator.generateMaze(wCellCount, hCellCount);
         		
         		boolean initReady = true;
         		
