@@ -103,7 +103,17 @@ public class GameCanvas extends Canvas {
 			//DRaw Icon
 			Icon icon = cell.getIcon();
 			if(icon != null){
-				icon.drawIcon(g, cellX, cellY);
+				Shape originalClip = g.getClip();
+				
+				int iconX = cellX + borderThick;
+				int iconY = cellY + borderThick;
+				
+				int iconSize = cellSize - borderThick;
+
+				g.setClip(iconX, iconY, iconSize, iconSize);
+				icon.drawIcon(g, iconX, iconY);
+				
+				g.setClip(originalClip);
 			}
 		}//end. for:cell
 		
